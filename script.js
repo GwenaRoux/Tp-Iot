@@ -8,8 +8,6 @@ function fetchData() {
         })
         .then(data => {
             const html = data.map(user => {
-
-                    for (const dataKey in data) {
                         return `<div class="user">
                                 <p> Nom : ${user.name}</p>
                                 <p> Age : ${user.age}</p>
@@ -17,7 +15,6 @@ function fetchData() {
                                         <p>${user.cars}</p>
                              </div>
                             <hr>`;
-                    }
                 })
                 .join("");
             document.querySelector("#liste").insertAdjacentHTML("afterbegin", html);
